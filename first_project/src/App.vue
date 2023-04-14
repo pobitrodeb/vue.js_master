@@ -2,12 +2,11 @@
 <template>
   <div>
     <h2> Course Name:  {{ course.name }}</h2>
-    <button @click="increment"> + </button>
+    <button @click="increment(2)"> + </button>
     {{ count }}
-    <button @click="decrement"> - </button>
+    <button @click="decrement(1)"> - </button>
   </div>
 </template>
-
 
 
 <script setup>
@@ -17,14 +16,14 @@
     name: "Vue.js Master Class"
   })
 
-  function increment()
+  function increment(item)
   {
-    count.value++
+    count.value += item
   }
 
-  function decrement()
+  function decrement(item)
   {
-    count.value--
+    count.value -= item
   }
 
 </script>
