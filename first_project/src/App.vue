@@ -4,22 +4,28 @@
     <h2> Course Name:  {{ course.name }}</h2>
     <p @click="changeMentor">Course Platform: {{ course.platform }}</p>
     <button @click="increment(2)"> + </button>
-    {{ count }}
+    {{ count }} is {{ checkOddOrEven }} 
     <button @click="decrement(1)"> - </button>
   </div>
 </template>
 
 
 <script setup>
-  import {ref, reactive} from 'vue'; 
+  import {ref, reactive, computed} from 'vue'; 
   let count = ref(0); 
   let course = reactive({
     name: "Vue.js Master Class", 
     platform: "Instructory", 
   })
-
+// Method 
  const increment = item => count.value += item
  const decrement = item => count.value -= item
  const changeMentor = () => course.platform = "Udemay"
+
+ //computed 
+const checkOddOrEven = computed(() => {
+  if(count.value %2 === 0 ) return 'even number';
+    return 'odd number';
+})
 
 </script>
