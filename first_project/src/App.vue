@@ -9,10 +9,10 @@
 
 
 
-
 // Easy Way Compotion API 
 <script setup>
-  let count = 0; 
-  let courseName = "Vue.js Master Class"; 
-  let mentor = "Ibrahim"
+import { ref } from 'vue';
+  let count = ref(0); 
+  let courseName = ref("Vue.js Master Class"); 
+  let mentor = ref("Ibrahim")
 </script>
