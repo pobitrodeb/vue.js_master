@@ -1,7 +1,8 @@
-// Methods -function way  
+// Methods - es6 way
 <template>
   <div>
     <h2> Course Name:  {{ course.name }}</h2>
+    <p @click="changeMentor">Course Platform: {{ course.platform }}</p>
     <button @click="increment(2)"> + </button>
     {{ count }}
     <button @click="decrement(1)"> - </button>
@@ -13,18 +14,12 @@
   import {ref, reactive} from 'vue'; 
   let count = ref(0); 
   let course = reactive({
-    name: "Vue.js Master Class"
+    name: "Vue.js Master Class", 
+    platform: "Instructory", 
   })
 
-  function increment(item)
-  {
-    count.value += item
-  }
-
-  function decrement(item)
-  {
-    count.value -= item
-  }
+ const increment = item => count.value += item
+ const decrement = item => count.value -= item
+ const changeMentor = () => course.platform = "Udemay"
 
 </script>
-// Methods -function way   
