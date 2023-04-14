@@ -8,14 +8,11 @@
 </template>
 
 
-<script>
-export default {
-  setup() {
-    let count = 0; 
-    let courseName = "Vue.js Master Class";
-    let mentor = "Mahamudh Ibrahim";
 
-    return {count, courseName, mentor}
-  }
-}
+
+// Easy Way Compotion API 
+<script setup>
+  let count = 0; 
+  let courseName = "Vue.js Master Class"; 
+  let mentor = "Ibrahim"
 </script>
