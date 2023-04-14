@@ -24,8 +24,7 @@
 
  //computed 
 const checkOddOrEven = computed(() => {
-  if(count.value %2 === 0 ) return 'even number';
-    return 'odd number';
+  return count.value % 2 === 0 ? 'even' : 'odd';
 })
 
 </script>
