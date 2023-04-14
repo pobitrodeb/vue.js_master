@@ -13,7 +13,6 @@
 
 
 // [ when your data non Primitive Type [object] you use reactive]
-
 <script setup>
 import {ref, reactive} from 'vue'; 
 let count = ref(0); 
