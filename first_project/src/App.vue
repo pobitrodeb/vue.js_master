@@ -18,11 +18,19 @@
 
     <div class="">
       <ul>
-     <li v-for="todo in todos" :key="todo.id">{{ todo.id }} {{ todo.todo }}</li>
+        <li v-for="todo in todos" :key="todo.id">{{ todo.id }} {{ todo.todo }}</li>
       </ul>
     </div>
 
+    <h1> V-for Pactices  </h1>
+    <div>
+        <ul>
+          <li v-for="(course, index) in courses" :key="index"> {{ index+1 }} <span>{{ course.title }}</span> </li>
+        </ul>
+    </div>
+
   </div>
+
 </template>
 
 
@@ -48,6 +56,13 @@
       {id: 4, todo: "Task 4"},
       {id: 5, todo: "Task 5"},
       {id: 6, todo: "Task 6"},
+ ]);
+
+ let courses = ref([
+    {id:1, title: 'PHP with MySQL'}, 
+    {id:2, title: 'OOP'}, 
+    {id:3, title: 'Laravel'}, 
+    {id:4, title: 'Vue.js'}, 
  ]);
 
 // Method 
