@@ -9,10 +9,19 @@
 
     <!-- v-html  -->
     <h1 v-html="rawHTML">  </h1>
-    
+
     <!-- v-show  -->
     <h1 v-show="showbtn"> Show or Hide </h1>
     <button @click="showbtn = !showbtn"> v-show </button>
+
+    <!-- v-for  -->
+
+    <div class="">
+      <ul>
+     <li v-for="todo in todos" :key="todo.id">{{ todo.id }} {{ todo.todo }}</li>
+      </ul>
+    </div>
+
   </div>
 </template>
 
@@ -30,6 +39,16 @@
 
   // v-show 
   let showbtn = ref(false);
+
+  // v-for 
+ let todos = ref([
+      {id: 1, todo: "Task 1"},
+      {id: 2, todo: "Task 2"},
+      {id: 3, todo: "Task 3"},
+      {id: 4, todo: "Task 4"},
+      {id: 5, todo: "Task 5"},
+      {id: 6, todo: "Task 6"},
+ ]);
 
 // Method 
  const increment = item => count.value += item
