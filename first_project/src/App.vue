@@ -36,8 +36,13 @@
       <img :src=" imageUrl" alt="short hand" title="short hand"> <!--short hand -->
       
     </div>
-</div>
-  <!-- end main div  -->
+
+    <h1> Class And Style Binding </h1>
+    <div :class=" isActive ? 'bg-primary' : 'bg-dark' ">
+      <img src="https://picsum.photos/200" alt="">
+    </div>
+</div> <!-- end main div  -->
+  
 
 </template>
 
@@ -76,7 +81,8 @@
 //  v-bind
   let imageUrl = ref('https://picsum.photos/200'); 
 
-
+//Binding HTML Classes
+let isActive = ref(true);
 
 // Method 
  const increment = item => count.value += item
@@ -98,5 +104,8 @@ const checkOddOrEven = computed(() => {
     }
 
   })
-
 </script>
+
+<style>
+
+</style>
