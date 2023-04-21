@@ -43,7 +43,7 @@
      
     </div>
       <!-- object binding  -->
-      <div class="mt-5 py-5" :class="{active:isActive, 'text-danger' : hasErrors}">
+      <div class="mt-5 py-5" :class="[isActive, hasErrors]">
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum deleniti similique architecto omnis qui atque modi optio officiis quo ad rerum soluta, consequuntur quidem dolorum explicabo necessitatibus fugit inventore esse.
         </p>
@@ -93,7 +93,7 @@
 let isActive = ref(true);
 
 //Binding Object Classes 
-let hasErrors = ref(true);
+let hasErrors = ref('text-danger');
 
 // Method 
  const increment = item => count.value += item
