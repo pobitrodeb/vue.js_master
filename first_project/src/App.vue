@@ -2,11 +2,17 @@
 <template>
   <div>
     <h2> Course Name:  {{ course.name }}</h2>
-    <p @click="changeMentor">Course Platform: {{ course.platform }}</p>
+    <p @click="changeMentor" >Course Platform: {{ course.platform }}</p>
     <button @click="increment(2)"> + </button>
     {{ count }} is {{ checkOddOrEven }} 
     <button @click="decrement(1)"> - </button>
+
+    <!-- v-html  -->
     <h1 v-html="rawHTML">  </h1>
+    
+    <!-- v-show  -->
+    <h1 v-show="showbtn"> Show or Hide </h1>
+    <button @click="showbtn = !showbtn"> v-show </button>
   </div>
 </template>
 
@@ -19,7 +25,12 @@
     platform: "Instructory", 
   })
 
+  // v-html 
   let rawHTML = `<li>This data form v-html directives </li>`
+
+  // v-show 
+  let showbtn = ref(false);
+
 // Method 
  const increment = item => count.value += item
  const decrement = item => count.value -= item
