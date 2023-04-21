@@ -50,7 +50,7 @@
       </div>
 
       <!-- Binging Inline Styles using Objects -->
-      <div class="mt-5 py-5" :style="styleObject">
+      <div class="mt-5 py-5" :style="[isActive, hasErrors]">
         <h2>Binging Inline Styles using Objects</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, expedita soluta maiores labore corrupti minima tenetur, sapiente itaque veniam vel recusandae alias neque eius illum, tempora repudiandae fugiat aliquam aspernatur?
@@ -98,10 +98,10 @@
   let imageUrl = ref('https://picsum.photos/200'); 
 
 //Binding HTML Classes
-let isActive = ref(true);
+let isActive = ref('backgroundColor:#e6513d');
 
 //Binding Object Classes 
-let hasErrors = ref('text-danger');
+let hasErrors = ref('color:white');
 
 // Binging Inline Styles using Objects
 const styleObject = reactive({
