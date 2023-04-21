@@ -40,7 +40,15 @@
     <h1> Class And Style Binding </h1>
     <div :class=" isActive ? 'bg-primary' : 'bg-dark' ">
       <img src="https://picsum.photos/200" alt="">
+     
     </div>
+      <!-- object binding  -->
+      <div class="mt-5 py-5" :class="{active:isActive, 'text-danger' : hasErrors}">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum deleniti similique architecto omnis qui atque modi optio officiis quo ad rerum soluta, consequuntur quidem dolorum explicabo necessitatibus fugit inventore esse.
+        </p>
+      </div>
+
 </div> <!-- end main div  -->
   
 
@@ -83,6 +91,9 @@
 
 //Binding HTML Classes
 let isActive = ref(true);
+
+//Binding Object Classes 
+let hasErrors = ref(true);
 
 // Method 
  const increment = item => count.value += item
