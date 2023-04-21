@@ -31,6 +31,11 @@ const checkOddOrEven = computed(() => {
   watch(() => count.value, (newValue, oldValue) => {
     console.log('newValue', newValue); 
     console.log('oldValue', oldValue);
+
+    if(newValue > 10){
+      alert('Counter value is over than 10');
+    }
+
   })
 
 </script>
