@@ -11,7 +11,7 @@
 
 
 <script setup>
-  import {ref, reactive, computed} from 'vue'; 
+  import {ref, reactive, computed, watch} from 'vue'; 
   let count = ref(0); 
   let course = reactive({
     name: "Vue.js Master Class", 
@@ -26,5 +26,11 @@
 const checkOddOrEven = computed(() => {
   return count.value % 2 === 0 ? 'even' : 'odd';
 })
+
+//Wathcer 
+  watch(() => count.value, (newValue, oldValue) => {
+    console.log('newValue', newValue); 
+    console.log('oldValue', oldValue);
+  })
 
 </script>
