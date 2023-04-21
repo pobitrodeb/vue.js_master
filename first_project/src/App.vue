@@ -29,7 +29,15 @@
         </ul>
     </div>
 
-  </div>
+<!-- v-bind  -->
+    <h1> V- bind </h1>
+    <div class="">
+      <img v-bind:src=" imageUrl" alt=""> <br> <br>
+      <img :src=" imageUrl" alt="short hand" title="short hand"> <!--short hand -->
+      
+    </div>
+</div>
+  <!-- end main div  -->
 
 </template>
 
@@ -64,6 +72,11 @@
     {id:3, title: 'Laravel'}, 
     {id:4, title: 'Vue.js'}, 
  ]);
+
+//  v-bind
+  let imageUrl = ref('https://picsum.photos/200'); 
+
+
 
 // Method 
  const increment = item => count.value += item
