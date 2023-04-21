@@ -6,15 +6,23 @@
 </template>
 
 <script setup>
-import {ref, onBeforeMount,} from 'vue';
+import {ref, onBeforeMount, onMounted,} from 'vue';
 let title =  ref('This is title for testing onBeforeMount');
 
 
   //  Life Cycle Hooks 
   onBeforeMount(() => {
-    title.value = "Vue.js Master Course By Ibrahim";
+    title.value = "This is on before mount";
     console.log('Before Mount');
   })
+
+  //Mounted 
+  onMounted(() => {
+    title.value = "this is on mounted";
+    console.log('mounted');
+  })
+
+
 </script>
 
 <style lang="scss" scoped>
