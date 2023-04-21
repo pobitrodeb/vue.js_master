@@ -49,6 +49,14 @@
         </p>
       </div>
 
+      <!-- Binging Inline Styles using Objects -->
+      <div class="mt-5 py-5" :style="styleObject">
+        <h2>Binging Inline Styles using Objects</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, expedita soluta maiores labore corrupti minima tenetur, sapiente itaque veniam vel recusandae alias neque eius illum, tempora repudiandae fugiat aliquam aspernatur?
+        </p>
+      </div>
+
 </div> <!-- end main div  -->
   
 
@@ -94,6 +102,14 @@ let isActive = ref(true);
 
 //Binding Object Classes 
 let hasErrors = ref('text-danger');
+
+// Binging Inline Styles using Objects
+const styleObject = reactive({
+    color: 'white',
+    fontSize: '28px',
+    backgroundColor: '#e6513d'
+
+});
 
 // Method 
  const increment = item => count.value += item
