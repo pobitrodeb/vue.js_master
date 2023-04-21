@@ -6,6 +6,7 @@
     <button @click="increment(2)"> + </button>
     {{ count }} is {{ checkOddOrEven }} 
     <button @click="decrement(1)"> - </button>
+    <h1 v-html="rawHTML">  </h1>
   </div>
 </template>
 
@@ -17,6 +18,8 @@
     name: "Vue.js Master Class", 
     platform: "Instructory", 
   })
+
+  let rawHTML = `<li>This data form v-html directives </li>`
 // Method 
  const increment = item => count.value += item
  const decrement = item => count.value -= item
