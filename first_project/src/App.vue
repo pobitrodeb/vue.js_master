@@ -1,26 +1,30 @@
 <template>
-      <h1>Vue.js Master Course </h1>
+      <h1> {{ title }}</h1>
+    <div class="">
+      <button @click="showModal = true"> show modal  </button>
+    </div>
+    
+  <Teleport to="body">
+    
+   <div class="container">
+    <div v-if="showModal" class="modael">
+      <p> Hello , This is from modal </p>
+      <button @click="showModal = false">close</button>
+    </div>
+   </div>
 
-      <h2> {{ title }}</h2>
-
-    <button id="coutner" @click="increement">{{ counter }}</button>
+  </Teleport>
 
 </template>
 
-<script setup>
-import {ref, nextTick} from 'vue';
-let title =  ref('');
-let counter = ref(0);
-
-const increement = async () => {
-  counter.value++;
-
-  //DOM Update 
-  console.log(document.getElementById('counter').textContent);
-
-  await nextTick();
-  console.log(document.getElementById('counter').textContent);
-
-}
-
+<script  setup>
+import {ref} from 'vue';
+let title = ref('Vue.js Master Class')
+let showModal = ref(false);
 </script>
+
+<style scoped>
+    .modael{
+     margin-left: 450px;
+    }
+</style>
