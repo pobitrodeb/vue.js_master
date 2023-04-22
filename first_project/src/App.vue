@@ -3,18 +3,24 @@
 
       <h2> {{ title }}</h2>
 
-      <input type="text" ref="input">
+    <button id="coutner" @click="increement">{{ counter }}</button>
 
 </template>
 
 <script setup>
-import {ref, onMounted,} from 'vue';
+import {ref, nextTick} from 'vue';
 let title =  ref('');
-const input = ref(null)
-  //Mounted 
-  onMounted(() => {
-    input.value.focus();
-    console.log(input.value);
-  })
+let counter = ref(0);
+
+const increement = async () => {
+  counter.value++;
+
+  //DOM Update 
+  console.log(document.getElementById('counter').textContent);
+
+  await nextTick();
+  console.log(document.getElementById('counter').textContent);
+
+}
 
 </script>
