@@ -3,28 +3,18 @@
 
       <h2> {{ title }}</h2>
 
+      <input type="text" ref="input">
+
 </template>
 
 <script setup>
-import {ref, onBeforeMount, onMounted,} from 'vue';
-let title =  ref('This is title for testing onBeforeMount');
-
-
-  //  Life Cycle Hooks 
-  onBeforeMount(() => {
-    title.value = "This is on before mount";
-    console.log('Before Mount');
-  })
-
+import {ref, onMounted,} from 'vue';
+let title =  ref('');
+const input = ref(null)
   //Mounted 
   onMounted(() => {
-    title.value = "this is on mounted";
-    console.log('mounted');
+    input.value.focus();
+    console.log(input.value);
   })
 
-
 </script>
-
-<style lang="scss" scoped>
-
-</style>
