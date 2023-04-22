@@ -1,30 +1,36 @@
 <template>
-      <h1> {{ title }}</h1>
-    <div class="">
-      <button @click="showModal = true"> show modal  </button>
-    </div>
-    
-  <Teleport to="body">
-    
-   <div class="container">
-    <div v-if="showModal" class="modael">
-      <p> Hello , This is from modal </p>
-      <button @click="showModal = false">close</button>
-    </div>
-   </div>
+   
+      <h1>{{ title }}</h1>
+      <div class="counter">
+        <button id="counter" @click="increement"> + </button>
+      <p class="m-2">
+          {{ count }}
+        </p>
+      <button id="counter" @click="decreement"> - </button>
+      </div>
 
-  </Teleport>
-
+      <Counter/>
 </template>
 
-<script  setup>
-import {ref} from 'vue';
-let title = ref('Vue.js Master Class')
-let showModal = ref(false);
+<script setup>
+import { ref } from 'vue';
+import Counter from './components/Counter.vue';
+
+let title = ref('Vue.js Master Course By Ibrahim')
+let count = ref(0);
+let increement = () => {
+    count.value ++;
+}
+
+let decreement = () => {
+  count.value --;
+}
+
 </script>
 
-<style scoped>
-    .modael{
-     margin-left: 450px;
-    }
+<style>
+.counter {
+  display:flex;
+  justify-content: center;
+}
 </style>
