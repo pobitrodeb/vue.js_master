@@ -1,14 +1,12 @@
 <template>
-   
+  
       <h1>{{ title }}</h1>
-      <div class="counter">
-        <button id="counter" @click="increement"> + </button>
-      <p class="m-2">
-          {{ count }}
-        </p>
-      <button id="counter" @click="decreement"> - </button>
+     <Counter v-for=" i in 3"> 
+      <div class="">
+        <p> counter {{ i }} </p>
       </div>
-      <Counter/> 
+     </Counter>
+
 </template>
 
 <script setup>
