@@ -1,7 +1,7 @@
 <template>
   
       <h1>{{ title }}</h1>
-     <Counter v-for=" i in 3"> 
+     <Counter v-for="i in 2" title="This data get form props"> 
       <div class="">
         <p> counter {{ i }} </p>
       </div>

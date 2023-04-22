@@ -15,8 +15,8 @@
 
 <script setup>
 import { ref } from 'vue';
-let title = ref('This data get form Counte component')
 let count = ref(0);
+const props = defineProps(['title'])
 let increement = () => {
   count.value ++;
 }
