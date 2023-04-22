@@ -8,8 +8,7 @@
         </p>
       <button id="counter" @click="decreement"> - </button>
       </div>
-
-      <Counter/>
+      <Counter/> 
 </template>
 
 <script setup>
