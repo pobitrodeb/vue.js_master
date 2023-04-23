@@ -11,7 +11,11 @@
   <script setup>
   import { ref } from "vue";
   import Counter from "../components/Counter.vue";
-  
+  import {UserCounter} from "../store/counter";
+
+
+  const counterStore = UserCounter(); 
+
   let title = ref("Vue.js Master Course By Ibrahim");
   let count = ref(0);
   let increement = () => {
