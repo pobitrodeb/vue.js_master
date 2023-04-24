@@ -1,23 +1,19 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
-import axios from 'axios'
+import { ref, computed } from "vue";
+import { defineStore } from "pinia";
+import axios from "axios";
 
+export const useTodoStore = defineStore("todo", {
+  state: () => ({
+    todos: [],
+  }),
 
-export const useTodoStore = defineStore('todo',{
-    state: () => ({
-        todos: [],
-    }), 
+  getters: {},
 
-    getters: {
-
+  actions: {
+    async getAllTodos() {
+      const { data } = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos");
+        this.todos = data;
     },
-
-    actions: {
-            getAllTodos(){
-                axios.get('https://jsonplaceholder.typicode.com/todos').then((response) => {
-                    console.log(response.data);
-                })
-            }
-    }
-})
- 
+  },
+});
