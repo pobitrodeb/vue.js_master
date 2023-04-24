@@ -1,4 +1,13 @@
 <script  setup>
+import { onMounted } from "vue";
+import { useTodoStore } from "./stores/todo";
+const todoStore = useTodoStore();
+
+
+onMounted(() => {
+  todoStore.getAllTodos();
+})
+
 </script>
 
 <template>
@@ -28,8 +37,9 @@
           <div class="card my-2">
             <div class="card-body">
               <ul class="list-group d-flex justify-content-between">
-                <li class="list-group-item "> Task 1 
-                  <a href="" class="btn"> <i class="fa-solid fa-xmark">  </i></a>
+                <li class="list-group-item">
+                  Task 1
+                  <a href="" class="btn"> <i class="fa-solid fa-xmark"> </i></a>
                 </li>
               </ul>
             </div>
@@ -39,8 +49,3 @@
     </div>
   </section>
 </template>
-
-
-
-<style scoped>
-</style>
