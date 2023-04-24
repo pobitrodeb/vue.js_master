@@ -38,7 +38,11 @@ onMounted(() => {
             <div class="card-body">
               <ul class="list-group d-flex justify-content-between">
                 <li v-for="todo in todoStore.todos" :key="todo.id" class="list-group-item">
-                 {{ todo.title }}
+              
+                <span :class="todo.completed ? 'bg-success' : 'bg-danger' ">
+                  {{ todo.title }}
+                </span>
+
                   <a href="" class="btn"> <i class="fa-solid fa-xmark"> </i></a>
                 </li>
               </ul>
