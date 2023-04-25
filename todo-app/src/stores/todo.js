@@ -10,6 +10,7 @@ export const useTodoStore = defineStore("todo", {
       userId: 1, 
       completed: false
     },
+    editId : 0,
     isEdit: false, 
   }),
 
@@ -46,7 +47,16 @@ export const useTodoStore = defineStore("todo", {
       this.todoForm.userId  = data.userId;
       this.todoForm.completed = data.completed; 
       this.isEdit = true;
-    }
-
+      this.editId = id;
+    },
+    async updateTodo(id){
+      const {data} = await axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`, this.todoForm);
+      // console.log(data);
+      this.todos.push(data);
+      this.todos.reverse();
+      this.todoForm.title = null
+      this.isEdit = false
+      
+    },
   },
 });

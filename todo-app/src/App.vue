@@ -43,7 +43,7 @@ onMounted(() => {
                     type="submit"
                     class="btn btn-warning"
                     value="Update Task" v-else
-                    @click.prevent="todoStore.createTodo"
+                    @click.prevent="todoStore.updateTodo(todoStore.editId)"
                    />
                   
                 </form>
