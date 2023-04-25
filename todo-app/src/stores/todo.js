@@ -28,8 +28,13 @@ export const useTodoStore = defineStore("todo", {
       // this.getAllTodos(); 
       this.todos.reverse();
       this.todoForm.title = null
-      
+    }, 
+
+    async deleteTodo(id){
+      const {data} = await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      console.log(data);
     }
+
 
   },
 });
