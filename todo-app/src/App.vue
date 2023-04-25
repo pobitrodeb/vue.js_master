@@ -40,6 +40,7 @@ onMounted(() => {
                   :key="todo.id"
                   class="list-group-item"
                 >
+                <input type="checkbox" name="" id="" class="form-check-input mx-2">
                   <span :class="todo.completed ? 'bg-success' : 'bg-danger'">
                     {{ todo.title }}
                   </span>

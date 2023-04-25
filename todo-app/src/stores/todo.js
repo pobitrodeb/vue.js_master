@@ -26,7 +26,9 @@ export const useTodoStore = defineStore("todo", {
       console.log(data);
       this.todos.push(data);
       // this.getAllTodos(); 
-
+      this.todos.reverse();
+      this.todoForm.title = null
+      
     }
 
   },
