@@ -54,34 +54,25 @@ onMounted(() => {
           <div class="card my-2">
             <div class="card-body">
               <ul class="list-group d-flex">
-                <li
-                  v-for="todo in todoStore.todos"
-                  :key="todo.id"
+                <li v-for="todo in todoStore.todos" :key="todo.id"
                   class="list-group-item d-flex justifiy-content-between"
                 >
-                  <input
-                    type="checkbox"
-                    name=""
-                    id=""
-                    class="form-check-input mx-2"
-                  />
+                  <div class="">
+                    <input
+                    type="checkbox" name="" id="" class="form-check-input mx-2" />
                   <span
-                    :class="todo.completed ? 'text-success' : 'text-danger'"
-                  >
+                    :class="todo.completed ? 'text-success' : 'text-danger'" >
                     {{ todo.title }}
                   </span>
 
+                  </div>
                   <div class="">
                     <a href="" class="btn">
-                      <i class="fa-solid fa-edit" @click.prevent="todoStore.getTodo(todo.id)"> </i
-                    ></a>
+                      <i class="fa-solid fa-edit" @click.prevent="todoStore.getTodo(todo.id)"> </i></a>
                     <a
-                      href=""
-                      class="btn"
-                      @click.prevent="todoStore.deleteTodo(todo.id)"
-                    >
-                      <i class="fa-solid fa-xmark"> </i
-                    ></a>
+                      href="" class="btn"
+                      @click.prevent="todoStore.deleteTodo(todo.id)">
+                      <i class="fa-solid fa-xmark"> </i></a>
                   </div>
                 </li>
               </ul>
