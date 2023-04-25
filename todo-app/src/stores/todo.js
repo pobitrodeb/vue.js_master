@@ -32,7 +32,10 @@ export const useTodoStore = defineStore("todo", {
 
     async deleteTodo(id){
       const {data} = await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-      console.log(data);
+      // console.log(data);
+      this.todos = this.todos.filter(todo => {
+        return todo.id != id;
+      })
     }
 
 
