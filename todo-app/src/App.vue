@@ -22,7 +22,10 @@ onMounted(() => {
               <div class="row">
                 <form>
                   <div class="col-md-12">
-                    <label for="" class="form-label"> Add New Task </label>
+                    <label for="" class="form-label"> 
+                       <span v-if="!todoStore.isEdit"> Add New Task </span> 
+                       <span v-else>UpdateTask </span> 
+                      </label>
                     <input
                       type="text"
                       class="form-control"
@@ -33,9 +36,16 @@ onMounted(() => {
                   <input
                     type="submit"
                     class="btn btn-primary"
-                    value="Submit"
+                    value="Add Task"
                     @click.prevent="todoStore.createTodo"
-                  />
+                    v-if="!todoStore.isEdit ? 'warning' : ''" />
+                  <input
+                    type="submit"
+                    class="btn btn-warning"
+                    value="Update Task" v-else
+                    @click.prevent="todoStore.createTodo"
+                   />
+                  
                 </form>
               </div>
             </div>

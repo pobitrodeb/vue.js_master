@@ -9,7 +9,8 @@ export const useTodoStore = defineStore("todo", {
       title: null, 
       userId: 1, 
       completed: false
-    }
+    },
+    isEdit: false, 
   }),
 
   getters: {},
@@ -39,8 +40,12 @@ export const useTodoStore = defineStore("todo", {
     }, 
 
     async getTodo(id){
-      const {data} = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
-      console.log(data);
+      const {data} = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+      // console.log(data);
+      this.todoForm.title   = data.title;
+      this.todoForm.userId  = data.userId;
+      this.todoForm.completed = data.completed; 
+      this.isEdit = true;
     }
 
   },
