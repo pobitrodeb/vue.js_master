@@ -36,8 +36,12 @@ export const useTodoStore = defineStore("todo", {
       this.todos = this.todos.filter(todo => {
         return todo.id != id;
       })
-    }
+    }, 
 
+    async getTodo(id){
+      const {data} = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      console.log(data);
+    }
 
   },
 });
